@@ -68,7 +68,8 @@ def try_appmenu_interface(window_id):
   dmenu_result = dmenu_cmd.communicate()[0].decode('utf8')
   dmenu_cmd.stdin.close()
   
-  dmenu_result = dmenu_result[:-1]
+  if dmenu_result.endswith("\n"):
+    dmenu_result = dmenu_result[:-1]
 
   # --- Use dmenu result
   if dmenu_result in dbusmenu_item_dict:
@@ -143,7 +144,8 @@ def try_gtk_interface(gtk_bus_name_cmd, gtk_object_path_cmd):
   dmenu_result = dmenu_cmd.communicate()[0].decode('utf8')
   dmenu_cmd.stdin.close()
   
-  dmenu_result = dmenu_result[:-1]
+  if dmenu_result.endswith("\n"):
+    dmenu_result = dmenu_result[:-1]
 
   # --- Use dmenu result
   if dmenu_result in gtk_menubar_action_dict:
