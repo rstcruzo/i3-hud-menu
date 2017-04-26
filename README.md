@@ -7,7 +7,10 @@ Dependencies
 ============
 * python-dbus
 * dmenu
-* ?
+* bzr
+* unity-gtk-module-standalone-bzr
+* dmenu
+* appmenu-qt4
 
 i3-appmenu-service.py
 =====================
